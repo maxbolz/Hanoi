@@ -39,10 +39,13 @@ public class Peg {
     }
     public int popDisc()
     {
-        int temp = discs[count-1];
-        discs[count-1] = 0;
-        count--;
-        return temp;
+        if(count > 0) {
+            int temp = discs[count - 1];
+            discs[count - 1] = 0;
+            count--;
+            return temp;
+        }
+        else return 0;
     }
     public boolean moveTopDisc(Peg newPeg)
     {
